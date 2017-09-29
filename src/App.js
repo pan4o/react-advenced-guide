@@ -1,21 +1,36 @@
-import React, { Component } from 'react';
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-class App extends Component {
-  render() {
+class App extends React.Component {
+    render() {
+        return (
+            <div className="container">
+              <Logo src={logo}/>
+              <BlueDataPicker /> // Imagine a blue datapicker here.
+            </div>
+        );
+    }
+}
+
+class Logo extends React.Component {
+  render () {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      <img src={this.props.src} className="logo" />
     );
   }
+}
+
+// Using DOT notation for JSX Type
+
+const MyComponent = {
+  dataPicker: function (props) {
+    return <div>Imagine a {props.color} datapicker here.</div>
+  }
+}
+
+function BlueDataPicker () {
+  return <MyComponent.dataPicker color="blue" />
 }
 
 export default App;
