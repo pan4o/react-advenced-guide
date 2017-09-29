@@ -7,7 +7,7 @@ class App extends React.Component {
         return (
             <div className="container">
               <Logo src={logo}/>
-              <BlueDataPicker /> // Imagine a blue datapicker here.
+              <BlueDataPicker />
             </div>
         );
     }
@@ -34,3 +34,5 @@ function BlueDataPicker () {
 }
 
 export default App;
+
+//https://reactjs.org/docs/jsx-in-depth.html#using-dot-notation-for-jsx-type
