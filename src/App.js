@@ -7,7 +7,20 @@ class App extends React.Component {
         return (
             <div className="container">
               <Logo src={logo}/>
-              <BlueDataPicker />
+              <BlueDataPicker/>
+              <HelloWorld/>
+              <NumberDescribe number={3} />
+              <NumberDescribe number={4} />
+              <MyContainer>
+                <ul>
+                  <li>
+                    <Child fruit="Apple"></Child>
+                  </li>
+                  <li>Orange</li>
+                  <li>Lime</li>
+                </ul>
+              </MyContainer>
+              <TodoList/>
             </div>
         );
     }
@@ -33,6 +46,59 @@ function BlueDataPicker () {
   return <MyComponent.dataPicker color="blue" />
 }
 
+class HelloWorld extends React.Component {
+  render () {
+    return <Hello what={'World'} />
+  }
+}
+
+function Hello (props) {
+  return <div>Hello {props.what}</div>;
+}
+
+//JavaScript Expressions as Props
+
+function NumberDescribe (props) {
+  let description;
+  if (props.number % 2) {
+    description = <strong>even</strong>;
+  } else {
+    description = <i>odd</i>;
+  }
+
+  return <div>{props.number} is {description} number</div>
+}
+
+//childrends
+
+function MyContainer(props) {
+  return (
+    <div>
+      This is container for {props.children}
+    </div>
+  );
+}
+
+function Child(props) {
+  return <span>{props.fruit}</span>
+}
+
+//JavaScript Expressions as Children
+
+function Item(props) {
+  return <li>{props.message}</li>;
+}
+
+function TodoList(props) {
+  const todos = ['start startup','to be javascript guru', 'to be a millionaire'];
+
+  return (
+    <ul>
+      { todos.map((todo) => <Item key={todo} message={todo} />) }
+    </ul>
+  );
+}
+
 export default App;
 
-//https://reactjs.org/docs/jsx-in-depth.html#using-dot-notation-for-jsx-type
+//https://reactjs.org/docs/jsx-in-depth.html#functions-as-children
