@@ -21,6 +21,9 @@ class App extends React.Component {
                 </ul>
               </MyContainer>
               <TodoList/>
+              <ListOfTenThings/>
+              <CheckDefaultProps/>
+              <CheckDefaultProps name={'Tom'}/>
             </div>
         );
     }
@@ -99,6 +102,42 @@ function TodoList(props) {
   );
 }
 
-export default App;
+//Functions as children
 
-//https://reactjs.org/docs/jsx-in-depth.html#functions-as-children
+function Repeat(props) {
+  let items = [];
+
+  for (let i = 0; i < props.numTimes; i++) {
+    items.push(props.children(i));
+  }
+
+  return <div>{items}</div>;
+}
+
+
+function ListOfTenThings() {
+  return (
+    <Repeat numTimes={10}>
+        {(index) => <div>{index + 1} div</div>}
+    </Repeat>
+  );
+}
+
+//default props
+
+class CheckDefaultProps extends React.Component {
+  render () {
+    return (
+      <div>Hello {this.props.name}</div>
+    );
+  }
+}
+
+CheckDefaultProps.defaultProps = {
+  name: 'Bill'
+}
+
+//https://reactjs.org/docs/refs-and-the-dom.html
+
+
+export default App;
