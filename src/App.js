@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import RefsAndDom from './RefsAndDom';
+
 
 class App extends React.Component {
     render() {
@@ -24,6 +26,7 @@ class App extends React.Component {
               <ListOfTenThings/>
               <CheckDefaultProps/>
               <CheckDefaultProps name={'Tom'}/>
+              <RefsAndDom />
             </div>
         );
     }
