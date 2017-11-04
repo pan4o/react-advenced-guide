@@ -50,6 +50,14 @@ class AutoFocus extends React.Component {
 
 }
 
+/*
+	div => this.firstDiv = div
+
+	function (div) {
+		this.firstDiv = div
+	}
+*/
+
 class Divs extends React.Component {
 	render () {
 		return (
@@ -71,7 +79,7 @@ class GetFourth extends React.Component {
 
 	render () {
 		return (
-			<Divs ref={div => this.divs = div} />
+			<Divs ref={(div) => this.divs = div} />
 		);
 	}
 }

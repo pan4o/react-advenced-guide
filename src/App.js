@@ -2,6 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import RefsAndDom from './RefsAndDom';
+import Uncontrolled from './Uncontrolled';
 
 
 class App extends React.Component {
@@ -27,6 +28,7 @@ class App extends React.Component {
               <CheckDefaultProps/>
               <CheckDefaultProps name={'Tom'}/>
               <RefsAndDom />
+              <Uncontrolled />
             </div>
         );
     }
