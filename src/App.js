@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import RefsAndDom from './RefsAndDom';
 import Uncontrolled from './Uncontrolled';
+import LearnReactRu from './LearnReactRu';
 
 
 class App extends React.Component {
@@ -29,6 +30,7 @@ class App extends React.Component {
               <CheckDefaultProps name={'Tom'}/>
               <RefsAndDom />
               <Uncontrolled />
+              <LearnReactRu />
             </div>
         );
     }
